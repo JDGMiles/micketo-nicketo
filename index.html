@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Micketo Nicketo</title>
+  <link rel="shortcut icon" href="https://jdgmiles.github.io/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <center>
+
+    <table id="cards-in-play">
+      <tr>
+        <td><button onclick="deck(1)">+</button></td>
+        <td><button onclick="alter(0,1)">+</button></td>
+        <td><button onclick="alter(1,1)">+</button></td>
+        <td><button onclick="alter(2,1)">+</button></td>
+        <td><button onclick="alter(3,1)">+</button></td>
+        <td><button onclick="alter(4,1)">+</button></td>
+        <td><button onclick="alter(5,1)">+</button></td>
+        <td><button onclick="alter(6,1)">+</button></td>
+        <td><button onclick="alter(7,1)">+</button></td>
+        <td><button onclick="alter(8,1)">+</button></td>
+        <td><button onclick="alter(9,1)">+</button></td>
+        <td><button onclick="alter(10,1)">+</button></td>
+        <td><button onclick="alter(11,1)">+</button></td>
+        <td><button onclick="alter(12,1)">+</button></td>
+      </tr>
+      <tr>
+        <td>deck</td>
+        <td>A</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>T</td>
+        <td>J</td>
+        <td>Q</td>
+        <td>K</td>
+        <td>total</td>
+      </tr>
+      <tr>
+        <td><button onclick="deck(-1)">−</button></td>
+        <td><button onclick="alter(0,-1)">−</button></td>
+        <td><button onclick="alter(1,-1)">−</button></td>
+        <td><button onclick="alter(2,-1)">−</button></td>
+        <td><button onclick="alter(3,-1)">−</button></td>
+        <td><button onclick="alter(4,-1)">−</button></td>
+        <td><button onclick="alter(5,-1)">−</button></td>
+        <td><button onclick="alter(6,-1)">−</button></td>
+        <td><button onclick="alter(7,-1)">−</button></td>
+        <td><button onclick="alter(8,-1)">−</button></td>
+        <td><button onclick="alter(9,-1)">−</button></td>
+        <td><button onclick="alter(10,-1)">−</button></td>
+        <td><button onclick="alter(11,-1)">−</button></td>
+        <td><button onclick="alter(12,-1)">−</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td id="a-count"></td>
+        <td id="2-count"></td>
+        <td id="3-count"></td>
+        <td id="4-count"></td>
+        <td id="5-count"></td>
+        <td id="6-count"></td>
+        <td id="7-count"></td>
+        <td id="8-count"></td>
+        <td id="9-count"></td>
+        <td id="t-count"></td>
+        <td id="j-count"></td>
+        <td id="q-count"></td>
+        <td id="k-count"></td>
+        <td id="total"></td>
+      </tr>
+    </table>
+
+    <button class="launch-button" onclick="launch()">Launch Simulation</button>
+
+    <span class="output">
+      <br>
+      <b>Report:</b>
+      <br>
+      <span id="bongo">Statistical report is generated here</span>
+      <br>
+      <b>Sample Game:</b>
+      <br>
+      <span id="drum">Sample game appears here</span>
+    </span>
+
+  </center>
+</body>
+
+</html>
+
+<script type="text/javascript" src="code.js"></script>

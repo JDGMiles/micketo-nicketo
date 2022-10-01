@@ -1,0 +1,27 @@
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 25px;
+    }
+
+    td {
+      text-align: center;
+      padding: 0px 3px 0px 3px;
+    }
+
+    button {
+      font-family: monospace;
+      font-weight: bolder;
+      font-size: 25px;
+      padding: 0px 10px 0px 10px;
+    }
+
+    .launch-button {
+      font-size: 34px;
+      padding: 0px 200px 0px 200px;
+    }
+
+    .output {
+      font-size: 32px;
+    }
