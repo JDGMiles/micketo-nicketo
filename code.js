@@ -73,14 +73,8 @@ function playgame(a, b, c, d, e, f, v) { // returns game result (0 to 9 = tie 0 
       return 11;
     }
   }
-  else if (pun == 7) {
-    if (ban == 7) {
-      if (v) { document.getElementById('drum').innerHTML += "TIE<br>" }
-      return pun;
-    }
-    else {
-      ban = (ban + e) % 10;
-      if (v) { document.getElementById('drum').innerHTML += "Banco draws extra card: " + e + "<br>Punto: " + pun + " Banco: " + ban + "<br>" }
+  else if (pun == 7 || pun == 6) {
+    if (ban == 7 || ban == 6) {
       if (pun == ban) {
         if (v) { document.getElementById('drum').innerHTML += "TIE<br>" }
         return pun;
@@ -93,12 +87,6 @@ function playgame(a, b, c, d, e, f, v) { // returns game result (0 to 9 = tie 0 
         if (v) { document.getElementById('drum').innerHTML += "BANCO WINS<br>" }
         return 11;
       }
-    }
-  }
-  else if (pun == 6) {
-    if (ban == 7) {
-      if (v) { document.getElementById('drum').innerHTML += "BANCO WINS<br>" }
-      return 11;
     }
     else {
       ban = (ban + e) % 10;
