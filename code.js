@@ -1,6 +1,6 @@
 const startdecks = 8; // starting decks in shoe
 
-const sims = 40000;
+const sims = 100000;
 
 var counts = []; // frequency of cards remaining by type (index 0 = Aces, 1 = 2s, ... 12 = Kings)
 
@@ -41,13 +41,13 @@ function updateui() { // updates displayed card frequencies
   document.getElementById('total').innerHTML = total;
 }
 
-function randomelements(n) { // returns an array of n values from 0 to n-1, randomised
+function randomelements(m, n) { // returns an array of m randomly-chosen values from 0 to n-1
   var startlist = [];
   for (var i = 0; i < n; i++) {
     startlist[i] = i;
   }
   var endlist = [];
-  for (var i = 0; i < n; i++) {
+  for (var i = 0; i < m; i++) {
     var roll = Math.floor(Math.random() * startlist.length);
     endlist[i] = startlist[roll];
     startlist.splice(roll, 1);
@@ -159,20 +159,19 @@ function simgame(v) { // simulates a game from the submitted deck information (v
     }
   }
 
-  // shuffles 'cards'
+  // picks 6 random cards
 
-  var shuffled = [];
-  var shuffle = randomelements(cards.length);
-  for (var i = 0; i < cards.length; i++) {
-    shuffled[i] = cards[shuffle[i]];
+  var picked = [];
+  var pick = randomelements(6, cards.length);
+  for (var i = 0; i < 6; i++) {
+    picked[i] = cards[pick[i]];
   }
-  cards = shuffled;
 
   if (v == 1) {
-    return playgame(cards[0], cards[1], cards[2], cards[3], cards[4], cards[5], 1);
+    return playgame(picked[0], picked[1], picked[2], picked[3], picked[4], picked[5], 1);
   }
   else {
-    return playgame(cards[0], cards[1], cards[2], cards[3], cards[4], cards[5]);
+    return playgame(picked[0], picked[1], picked[2], picked[3], picked[4], picked[5]);
   }
 
 }
