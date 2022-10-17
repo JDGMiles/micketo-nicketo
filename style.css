@@ -14,7 +14,7 @@
     button {
       font-family: monospace;
       font-weight: bolder;
-      font-size: 45px;
+      font-size: 70px;
       padding: 0px 10px 0px 10px;
     }
 
@@ -29,4 +29,9 @@
 
     .truecount {
       color: rgb(145, 145, 0);
+      width: 330px;
+    }
+
+    .middlecolumn {
+      width:100px;
     }
