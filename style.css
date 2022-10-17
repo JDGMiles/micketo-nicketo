@@ -6,6 +6,7 @@
     }
 
     td {
+      font-size: 45px;
       text-align: center;
       padding: 0px 3px 0px 3px;
     }
@@ -13,15 +14,19 @@
     button {
       font-family: monospace;
       font-weight: bolder;
-      font-size: 25px;
+      font-size: 45px;
       padding: 0px 10px 0px 10px;
     }
 
     .launch-button {
-      font-size: 34px;
-      padding: 0px 200px 0px 200px;
+      font-size: 40px;
+      padding: 0px 40px 0px 40px;
     }
 
     .output {
       font-size: 32px;
+    }
+
+    .truecount {
+      color: rgb(145, 145, 0);
     }

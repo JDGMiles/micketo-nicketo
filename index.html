@@ -13,70 +13,97 @@
 
     <table id="cards-in-play">
       <tr>
-        <td><button onclick="deck(1)">+</button></td>
+        <td id="1-tcount" class="truecount">true-count</td>
+        <td>1</td>
+        <td><button onclick="alter(0,-1)">−</button></td>
+        <td id="1-count"></td>
         <td><button onclick="alter(0,1)">+</button></td>
+        <td id="1-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="2-tcount" class="truecount">true-count</td>
+        <td>2</td>
+        <td><button onclick="alter(1,-1)">−</button></td>
+        <td id="2-count"></td>
         <td><button onclick="alter(1,1)">+</button></td>
+        <td id="2-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="3-tcount" class="truecount">true-count</td>
+        <td>3</td>
+        <td><button onclick="alter(2,-1)">−</button></td>
+        <td id="3-count"></td>
         <td><button onclick="alter(2,1)">+</button></td>
+        <td id="3-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="4-tcount" class="truecount">true-count</td>
+        <td>4</td>
+        <td><button onclick="alter(3,-1)">−</button></td>
+        <td id="4-count"></td>
         <td><button onclick="alter(3,1)">+</button></td>
+        <td id="4-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="5-tcount" class="truecount">true-count</td>
+        <td>5</td>
+        <td><button onclick="alter(4,-1)">−</button></td>
+        <td id="5-count"></td>
         <td><button onclick="alter(4,1)">+</button></td>
+        <td id="5-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="6-tcount" class="truecount">true-count</td>
+        <td>6</td>
+        <td><button onclick="alter(5,-1)">−</button></td>
+        <td id="6-count"></td>
         <td><button onclick="alter(5,1)">+</button></td>
+        <td id="6-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="7-tcount" class="truecount">true-count</td>
+        <td>7</td>
+        <td><button onclick="alter(6,-1)">−</button></td>
+        <td id="7-count"></td>
         <td><button onclick="alter(6,1)">+</button></td>
+        <td id="7-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="8-tcount" class="truecount">true-count</td>
+        <td>8</td>
+        <td><button onclick="alter(7,-1)">−</button></td>
+        <td id="8-count"></td>
         <td><button onclick="alter(7,1)">+</button></td>
+        <td id="8-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="9-tcount" class="truecount">true-count</td>
+        <td>9</td>
+        <td><button onclick="alter(8,-1)">−</button></td>
+        <td id="9-count"></td>
         <td><button onclick="alter(8,1)">+</button></td>
+        <td id="9-edge">edge</td>
+      </tr>
+      <tr>
+        <td id="0-tcount" class="truecount">true-count</td>
+        <td>0</td>
+        <td><button onclick="alter(9,-1)">−</button></td>
+        <td id="0-count"></td>
         <td><button onclick="alter(9,1)">+</button></td>
-        <td><button onclick="alter(10,1)">+</button></td>
-        <td><button onclick="alter(11,1)">+</button></td>
-        <td><button onclick="alter(12,1)">+</button></td>
+        <td id="0-edge">edge</td>
       </tr>
       <tr>
         <td>deck</td>
-        <td>A</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <td>T</td>
-        <td>J</td>
-        <td>Q</td>
-        <td>K</td>
-        <td>total</td>
-      </tr>
-      <tr>
-        <td><button onclick="deck(-1)">−</button></td>
-        <td><button onclick="alter(0,-1)">−</button></td>
-        <td><button onclick="alter(1,-1)">−</button></td>
-        <td><button onclick="alter(2,-1)">−</button></td>
-        <td><button onclick="alter(3,-1)">−</button></td>
-        <td><button onclick="alter(4,-1)">−</button></td>
-        <td><button onclick="alter(5,-1)">−</button></td>
-        <td><button onclick="alter(6,-1)">−</button></td>
-        <td><button onclick="alter(7,-1)">−</button></td>
-        <td><button onclick="alter(8,-1)">−</button></td>
-        <td><button onclick="alter(9,-1)">−</button></td>
-        <td><button onclick="alter(10,-1)">−</button></td>
-        <td><button onclick="alter(11,-1)">−</button></td>
-        <td><button onclick="alter(12,-1)">−</button></td>
-      </tr>
-      <tr>
         <td></td>
-        <td id="a-count"></td>
-        <td id="2-count"></td>
-        <td id="3-count"></td>
-        <td id="4-count"></td>
-        <td id="5-count"></td>
-        <td id="6-count"></td>
-        <td id="7-count"></td>
-        <td id="8-count"></td>
-        <td id="9-count"></td>
-        <td id="t-count"></td>
-        <td id="j-count"></td>
-        <td id="q-count"></td>
-        <td id="k-count"></td>
+        <td><button onclick="deck(-1)">−</button></td>
+        <td></td>
+        <td><button onclick="deck(1)">+</button></td>
+      </tr>
+      <tr>
+        <td>total</td>
+        <td></td>
         <td id="total"></td>
+        <td></td>
       </tr>
     </table>
 
