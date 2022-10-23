@@ -1,6 +1,6 @@
 const startdecks = 8; // starting decks in shoe
 
-const sims = 500000;
+const sims = 1000000;
 
 var counts = []; // frequency of cards remaining by type (index 0 = Aces, 1 = 2s, ... 12 = Kings)
 
@@ -67,15 +67,15 @@ function updateui() { // updates displayed card frequencies
   systemcount[systemcount.length] = [1, 1, 0, 0, 0, 0, 0, -8, 2, 1];
   systemcount[systemcount.length] = [1, 1, 1, 0, 0, 0, 0, 0, -7, 1];
   systemcount[systemcount.length] = [1, 1, 1, 1, 0, 0, 0, 0, 1, -8];
-  triggers = [7,7,6,7,7,7,7,4,6,6];
+  triggers = [7, 7, 6, 7, 7, 7, 7, 4, 6, 6];
 
   for (var i = 0; i < 10; i++) {
     var countnumber = Math.round(100 * (systemcount[i][1] * cardsgone[1] + systemcount[i][2] * cardsgone[2] + systemcount[i][3] * cardsgone[3] + systemcount[i][4] * cardsgone[4] + systemcount[i][5] * cardsgone[5] + systemcount[i][6] * cardsgone[6] + systemcount[i][7] * cardsgone[7] + systemcount[i][8] * cardsgone[8] + systemcount[i][9] * cardsgone[9] + systemcount[i][0] * cardsgone[0]) / (total / 52)) / 100;
     document.getElementById('' + i + '-tcount').innerHTML = countnumber + " (" + triggers[i] + ")";
-    if(countnumber>triggers[i]){
+    if (countnumber > triggers[i]) {
       document.getElementById('' + i + '-tcount').style.color = "yellow";
     }
-    else{
+    else {
       document.getElementById('' + i + '-tcount').style.color = "rgb(130, 130, 0)";
     }
   }
@@ -184,20 +184,7 @@ function playgame(a, b, c, d, e, f, v) { // returns game result (0 to 9 = tie 0 
   }
 }
 
-function simgame(v) { // simulates a game from the submitted deck information (v=1 gives explanation)
-  var cards = []; // cards remaining recorded individually
-
-  // builds 'cards' from frequency counts
-
-  for (var i = 0; i < 9; i++) {
-    for (var j = 0; j < counts[i]; j++) {
-      cards[cards.length] = i + 1;
-    }
-  }
-  for (var j = 0; j < counts[9]; j++) {
-    cards[cards.length] = 0;
-  }
-
+function simgame(cards, v) { // simulates a game from the submitted deck information (v=1 gives explanation)
   // picks 6 random cards
 
   var picked = [];
@@ -216,6 +203,19 @@ function simgame(v) { // simulates a game from the submitted deck information (v
 }
 
 function launch() {
+  var shoe = []; // cards remaining recorded individually
+
+  // builds 'shoe' from frequency counts
+
+  for (var i = 0; i < 9; i++) {
+    for (var j = 0; j < counts[i]; j++) {
+      shoe[shoe.length] = i + 1;
+    }
+  }
+  for (var j = 0; j < counts[9]; j++) {
+    shoe[shoe.length] = 0;
+  }
+
   var edge = [];
   for (var i = 0; i < 10; i++) {
     edge[i] = 0;
@@ -227,11 +227,11 @@ function launch() {
   document.getElementById("bongo").innerHTML = '';
   document.getElementById("drum").innerHTML = '';
   for (i = 0; i < sims / 2; i++) {
-    result[simgame()]++;
+    result[simgame(shoe, 0)]++;
   }
-  result[simgame(1)]++;
+  result[simgame(shoe, 1)]++;
   for (i = 0; i < sims / 2; i++) {
-    result[simgame()]++;
+    result[simgame(shoe, 0)]++;
   }
   for (var i = 0; i < 10; i++) {
     document.getElementById("bongo").innerHTML += "Tie-" + i + ": " + Math.round(100000 * result[i] / (sims + 1)) / 1000 + "%<br>";
